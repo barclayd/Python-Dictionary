@@ -7,9 +7,20 @@ dictionary = json.load(open("dictionary.json"))
 
 def get_definition(word):
 
+    word = word.lower()
+
     if word in dictionary:
 
         return dictionary[word]
+
+    elif word.title() in dictionary:
+
+        return dictionary[word.title()]
+
+    elif word.upper() in dictionary:
+
+        return dictionary[word.upper()]
+
     else:
         return "The word doesn't exist, please double check it."
 
